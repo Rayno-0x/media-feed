@@ -129,7 +129,10 @@ header {
   font-weight: bold;
   cursor: pointer;
 }
-
+.btn-submit a {
+  text-decoration: none;
+  color: #ffffff;
+}
 nav {
   display: flex;
   justify-content: space-between;
