@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="feed.css" />
+    <title>MediaFeed - Social Wall</title>
+  </head>
+  <body>
+    <!-- Reusable Header from your previous pages -->
+    <header class="feed-nav">
+
+      <a href="index.html" class="logo">Media<span>Feed</span></a>
+        <ul class="nav-list">
+          <li><a href="feed.html">Your Feed</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blogs.html">Articles & Blogs</a></li>
+          <li><a href="music.html">Music</a></li>
+        </ul>
+
+      <div class="nav-actions">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search" class="search-input" />
+        </div>
+        <button class="btn-social"><a href="#">Social</a></button>
+        <img
+          src="./assets/images/icons/avatar_icon.png"
+          alt="Profile"
+          class="profile-pic"
+        />
+      </div>
+    </header>
+
+    <main class="social-wall-container">
+      
+      <div class="feed-header">
+        <h2>My Social Feed</h2>
+
+        <div class="feed-filters">
+          <button class="filter-btn active">ALL</button>
+          <button class="filter-btn">🎨 Gallery</button>
+          <button class="filter-btn">📝 Articles</button>
+          <button class="filter-btn">🎵 Music</button>
+          <button class="filter-btn">✍️ Blogs</button>
+
+          <!-- <a href="https://facebook.com" target="_blank"
+      ><i class="bxl bx-facebook-square"></i
+    ></a>
+    <a href="https://twitter.com" target="_blank"
+      ><i class="bxl bx-twitter-x"></i
+    ></a>
+    <a href="https://youtube.com" target="_blank"
+      ><i class="bxl bx-youtube"></i
+    ></a>
+    <a href="https://linkedin.com" target="_blank"
+      ><i class="bxl bx-linkedin"></i
+    ></a> -->
+        </div>
+      </div>
+
+      <!-- The CSS Grid Feed -->
+      <!-- The CSS Grid Feed -->
+      <div class="social-grid">
+        <!-- Card 1: Gallery / Design Profile -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/icons/avatar1.png"
+              alt="Bless Designs"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Bless Designs</h4>
+              <span class="post-time">@bless.designsncodes • 1 hr ago</span>
+            </div>
+            <span class="category-badge gallery-badge">Gallery</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Just finalized the geometric profile elements linking code and
+              art. Combining frontend logic with visual branding is the best
+              feeling. 🎨💻 <br />Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Deleniti, atque.
+            </p>
+            <img
+              src="./assets/images/geometric.jpg"
+              alt="Geometric Design"
+              class="post-image"
+            />
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 214</button>
+            <button class="action-btn">💬 18</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 2: Tech/Startup Achievement -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/techspire.jpg"
+              alt="Techspire"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Techspire Team</h4>
+              <span class="post-time">@techspire_hq • 3 hrs ago</span>
+            </div>
+            <span class="category-badge article-badge">Article</span>
+          </div>
+          <div class="card-body">
+            <p>
+              We are incredibly proud to announce our second-place finish at the
+              WEMA Hackathon 6.0! Building SmartAR Tailor has been a journey.
+              Read our co-founder's vision on what’s next for the platform.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
+              exercitationem tempora minus autem. Fuga ipsa veritatis animi illo
+              placeat pariatur. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Odio, cumque!
+            </p>
+            <div class="article-snippet">
+              <h5>The Future of SmartAR Tailor</h5>
+              <p>
+                Scaling our augmented reality fashion solution after WEMA 6.0...
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 512</button>
+            <button class="action-btn">💬 42</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 3: Educational / Mentorship -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/man1.jpg"
+              alt="Mr. Charles"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Mr. Charles</h4>
+              <span class="post-time">@charles_tutors • 5 hrs ago</span>
+            </div>
+            <span class="category-badge blog-badge">Blog</span>
+          </div>
+          <div class="card-body">
+            <p>
+              A quick reminder for all my Python and Machine Learning students:
+              understanding the foundational logic of your code is infinitely
+              more important than rote memorization. Syntax changes, logic
+              remains.
+            </p>
+            <img
+              src="./assets/images/mrcharles.jpg"
+              alt=""
+              class="post-image"
+            />
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 302</button>
+            <button class="action-btn">💬 45</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 4: Audio/Music -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/lady1.jpg"
+              alt="Glory Obinwokoye"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Glory Obinwokoye</h4>
+              <span class="post-time">@glory_o • 8 hrs ago</span>
+            </div>
+            <span class="category-badge music-badge">Music</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Prepping for the next DevFest Akure and needed some deep focus.
+              Highly recommend this lo-fi mix for anyone pushing through a solo
+              coding session today.
+            </p>
+            <img
+              src="./assets/images/coding.jpg"
+              alt="Geometric Design"
+              class="post-image"
+            />
+            <div class="audio-player-snippet">
+              <div class="play-circle">▶</div>
+              <span>Deep Focus Lo-Fi Beats</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 89</button>
+            <button class="action-btn">💬 5</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 5: Professional Update -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/lady2.jpg"
+              alt="Chi-Chi C. Nsofor"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Chike C. Nsofor</h4>
+              <span class="post-time">@chichi_codes • 12 hrs ago</span>
+            </div>
+            <span class="category-badge article-badge">Article</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Huge congratulations to everyone who got accepted into Cohort 9 of
+              the Africa Agility Girls in Tech program! I wrote a short guide on
+              how to maximize your four weeks of technical training. <br />Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. At in sit eius
+              recusandae, ut officiis voluptatibus repudiandae voluptates
+              voluptatem accusamus placeat, sequi nam quae? Placeat voluptatem
+              exercitationem sint, sunt vel perspiciatis tenetur quia odio ut
+              impedit quibusdam cumque consectetur!
+            </p>
+
+            <div class="article-snippet">
+              <h5>Thriving in Cohort 9</h5>
+              <p>Tips for mastering Python, ML, and community networking...</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 420</button>
+            <button class="action-btn">💬 31</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 6: UI/UX Wireframes (Gallery) -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/man2.jpg"
+              alt="Ife Abimbola-Olulesi"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Ife Abimbola-Olulesi</h4>
+              <span class="post-time">@ife_designs • 14 hrs ago</span>
+            </div>
+            <span class="category-badge gallery-badge">Gallery</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Working on the data aggregation and cleaning flow for the
+              Emergency Contact Directory Web App. Here are some early UI
+              sketches of how the responsive grid will look on mobile.
+              <br />Emergency Contact Directory Web App Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Eius quod architecto magnam
+              debitis perspicia
+            </p>
+            <img
+              src="./assets/images/dataclean.jpg"
+              alt="UI Sketches"
+              class="post-image"
+            />
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 156</button>
+            <button class="action-btn">💬 22</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 7: Personal Reflection (Blog) -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/lady3.jpg"
+              alt="Miracle Enenche"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Miracle Enenche</h4>
+              <span class="post-time">@miracle_e • 1 day ago</span>
+            </div>
+            <span class="category-badge blog-badge">Blog</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Day 25 of the 50-day posting challenge. Consistency is definitely
+              the hardest part of building career visibility, but seeing the
+              small wins in HTML, CSS, and JS debugging makes it worth it.
+              <br />Consistency is definitely the hardest part of building
+              career visibility, but seeing the small wins in HTML, CSS, and JS
+              debugging makes it worth it
+            </p>
+            <img
+              src="./assets/images/pexel/pexels-cascade-1853341_1920.jpg"
+              alt="Geometric Design"
+              class="post-image"
+            />
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 198</button>
+            <button class="action-btn">💬 34</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 8: Morning Market Analysis (Gallery/Blog) -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/lady4.jpg"
+              alt="Dunamis"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">Dunamis</h4>
+              <span class="post-time">@dunamis_trades • 1 day ago</span>
+            </div>
+            <span class="category-badge gallery-badge">Gallery</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Finished the morning crypto and forex class. The charts are
+              looking interesting today. Always keep learning outside your main
+              field!<br />Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. At in sit eius recusandae, ut officiis voluptatibus
+              repudiandae voluptates voluptatem accusamus placeat, sequi nam
+              quae? Placeat voluptatem exercitationem sint, sunt vel
+              perspiciatis tenetur quia odio ut impedit quibusdam cumque
+              consectetur!
+            </p>
+            <img
+              src="./assets/images/crypto.jpg"
+              alt="Market Charts"
+              class="post-image"
+            />
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 112</button>
+            <button class="action-btn">💬 8</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 9: Engineering Project (Article) -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/pexel/pexels-mikhail-nilov-7988082.jpg"
+              alt="FUTA Engineering"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">FUTA Engineering</h4>
+              <span class="post-time">@futa_eng • 2 days ago</span>
+            </div>
+            <span class="category-badge article-badge">Article</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Our 400-level teams just completed their Electromagnetic Wave
+              Signal Analysis gathering. Great job to all the technical leads
+              for tracking down those RF interference sources.
+            </p>
+            <img
+              src="./assets/images/pexel/pexels-cascade-1853341_1920.jpg"
+              alt="Geometric Design"
+              class="post-image"
+            />
+            <div class="article-snippet">
+              <h5>RF Reading Protocols</h5>
+              <p>
+                Identifying signal interference in urban campus environments...
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 340</button>
+            <button class="action-btn">💬 15</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+
+        <!-- Card 10: Motivational (Music/Audio) -->
+        <article class="social-card">
+          <div class="card-header">
+            <img
+              src="./assets/images/dailyhustle.png"
+              alt="Startup Podcast"
+              class="avatar"
+            />
+            <div class="user-info">
+              <h4 class="user-name">The Daily Hustle</h4>
+              <span class="post-time">@daily_hustle • 2 days ago</span>
+            </div>
+            <span class="category-badge music-badge">Music</span>
+          </div>
+          <div class="card-body">
+            <p>
+              Whenever you hit a difficult milestone, remember the positive
+              affirmations that got you started. Here’s a quick 5-minute audio
+              track to reset your mindset for the week.
+            </p>
+            <img
+              src="./assets/images/dailyhus2.jpg"
+              alt="Geometric Design"
+              class="post-image"
+            />
+            <div class="audio-player-snippet">
+              <div class="play-circle">▶</div>
+              <span>Navigating Milestones</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="action-btn">♡ 670</button>
+            <button class="action-btn">💬 88</button>
+            <button class="action-btn share-btn">➦ Share</button>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
