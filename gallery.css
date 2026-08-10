@@ -149,24 +149,6 @@ body {
 .filter-btns button:hover {
   background-color: rgb(13, 10, 84);
 }
-.upload-btn {
-  background-color: rgb(14, 10, 100);
-  border: none;
-  border-radius: 20px;
-  padding: 10px 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-.upload-btn a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.9rem;
-}
-.upload-btn:hover {
-  opacity: 0.9;
-}
 
 /* Gallery Grid */
 .gallery-grid {
