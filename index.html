@@ -9,228 +9,616 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>MediaFeed</title>
+    <title>MediaFeed — One Feed for Everything You Create</title>
   </head>
 
   <body>
+    <!-- Navigation (outside header so it can stick to the viewport) -->
+    <nav class="navbar">
+      <a href="#" class="logo">MediaFeed</a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="signInBtn" class="btn-ghost">Sign In</button>
+        <button id="signUpBtn" class="btn-primary">Sign Up Free</button>
+      </div>
+    </nav>
+
     <!-- Header -->
     <header>
-      <nav class="navbar">
-        <a href="#" class="logo">MediaFeed</a>
-        <button id="signInBtn" class="btn-primary">Sign In</button>
-      </nav>
 
       <!-- Hero Content -->
       <div class="hero-sec">
         <div class="hero-content">
-          <!-- Top Badge -->
           <div class="tagline">
             <span class="dot"></span> All-in-one platform
           </div>
 
-          <!-- Main Copy -->
           <h1 class="hero-headline">
             Your creativity isn't one-dimensional.<br />
             Your feed shouldn't be either.
           </h1>
 
           <p class="description">
-            The best creators don't stick to just one medium. But managing
-            different apps to share your music, articles, and photos is
-            exhausting. Keep your audience in one place and never fragment your
-            creativity again with MediaFeed.
+            MediaFeed brings your music, articles, photos, and blogs into one
+            beautiful home and links every social account you have. Build one
+            audience instead of five.
           </p>
 
-          <!-- Floating CTA Card -->
           <div class="cta-card">
             <div class="cta-info">
               <p class="cta-title">Join the MediaFeed community</p>
-              <p class="cta-subtitle">100% free for all creators</p>
+              <p class="cta-subtitle"><strong>100% free</strong> for all creators</p>
             </div>
-            <button id="signUpBtn" class="btn-primary">Sign up for free</button>
+            <button id="signUpBtnHero" class="btn-primary cta-open-signup">
+              Sign up for free
+            </button>
+          </div>
+
+          <div class="hero-proof reveal">
+            <div class="proof-avatars">
+              <img src="./assets/images/lady1.jpg" alt="Creator" />
+              <img src="./assets/images/man2.jpg" alt="Creator" />
+              <img src="./assets/images/lady3.jpg" alt="Creator" />
+              <img src="./assets/images/man1.jpg" alt="Creator" />
+            </div>
+            <p><strong>2,340+ creators</strong> already share their work here</p>
           </div>
         </div>
 
         <div class="hero-visual">
           <video src="assets/mediafeed.mp4" autoplay muted loop></video>
+          <div class="float-chip float-chip-top">
+            <span class="chip-icon chip-music">♫</span>
+            <div>
+              <p>New track from @glory_o</p>
+              <span>Deep Focus Lo-Fi Beats</span>
+            </div>
+          </div>
+          <div class="float-chip float-chip-bottom">
+            <span class="chip-icon chip-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+            </span>
+            <div>
+              <p>4 accounts linked</p>
+              <span>Instagram · X · TikTok · YouTube</span>
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
     <!-- Main -->
     <main>
-      <div class="content-category">
+      <!-- Proof Strip -->
+      <section class="stats-strip reveal">
+        <div class="stat">
+          <span class="stat-number" data-count="2340">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Creators on board</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="18700">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Posts shared</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="6">0</span>
+          <span class="stat-suffix"></span>
+          <span class="stat-label">Platforms connectable</span>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section class="problem reveal" id="problem">
+        <h2 class="section-title">
+          Your creativity lives in five apps.<br />
+          Your audience is split five ways.
+        </h2>
+        <p class="section-subtitle">
+          Photos here, music there, articles somewhere else. Followers on one
+          app never see what you make on the others.
+        </p>
+
+        <div class="problem-visual">
+          <div class="scatter-col">
+            <span class="app-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </span>
+            <span class="app-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+              X / Twitter
+            </span>
+            <span class="app-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              TikTok
+            </span>
+            <span class="app-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              YouTube
+            </span>
+            <span class="app-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Medium
+            </span>
+          </div>
+
+          <div class="problem-arrow">
+            <svg viewBox="0 0 80 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 12h70m0 0-8-8m8 8-8 8"/>
+            </svg>
+          </div>
+
+          <div class="unified-card">
+            <div class="unified-card-header">Media<span>Feed</span></div>
+            <p>One feed. Every medium.<br />Every follower.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="how-it-works reveal" id="how-it-works">
+        <h2 class="section-title">Up and running in three steps</h2>
+
+        <div class="steps-row">
+          <article class="step-card">
+            <span class="step-num">01</span>
+            <h3>Create your account</h3>
+            <p>Sign up free and set up your creator profile in under a minute.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-num">02</span>
+            <h3>Link socials &amp; upload</h3>
+            <p>Connect your Instagram, X, TikTok or YouTube — then post galleries, articles, blogs and music.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-num">03</span>
+            <h3>Grow one audience</h3>
+            <p>Everyone who follows you on MediaFeed sees everything you create, in one wall.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Feature Deep-Dive -->
+      <section class="features" id="features">
+        <h2 class="section-title reveal">Everything a creator needs, nothing they don't</h2>
+
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-tag tag-feed">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+              Unified Feed
+            </span>
+            <h3>All your content. One scroll.</h3>
+            <p>Galleries, long-form articles, blogs, and playable music live side by side in a single masonry wall. Filter by type with one tap — your audience never leaves the page.</p>
+          </div>
+          <div class="feature-visual">
+            <div class="mock-feed">
+              <div class="mock-post mock-tall">
+                <img src="./assets/images/geometric.jpg" alt="" />
+                <span class="mock-badge badge-gallery">Gallery</span>
+              </div>
+              <div class="mock-post">
+                <img src="./assets/images/article.jpg" alt="" />
+                <span class="mock-badge badge-blog">Blog</span>
+              </div>
+              <div class="mock-post">
+                <img src="./assets/images/coding.jpg" alt="" />
+                <span class="mock-badge badge-article">Article</span>
+              </div>
+              <div class="mock-post mock-player">
+                <span class="mock-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21"/></svg></span> Deep Focus Lo-Fi
+                <span class="mock-badge badge-music">Music</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row row-reverse reveal">
+          <div class="feature-text">
+            <span class="feature-tag tag-hub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Social Hub
+            </span>
+            <h3>Every account you have, linked to one profile</h3>
+            <p>Connect Instagram, X, TikTok, YouTube, Twitch and more. Your followers get a single doorway to everything you are online — no more "link in bio" gymnastics.</p>
+          </div>
+          <div class="feature-visual">
+            <div class="mock-profile">
+              <img class="mock-avatar" src="./assets/images/lady2.jpg" alt="" />
+              <div class="mock-handle">@chichi_codes</div>
+              <div class="mock-links">
+                <span class="mock-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  Instagram
+                </span>
+                <span class="mock-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+                  X / Twitter
+                </span>
+                <span class="mock-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                  TikTok
+                </span>
+                <span class="mock-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                  YouTube
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-tag tag-music">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              Built-in Player
+            </span>
+            <h3>Music that plays where it's posted</h3>
+            <p>A persistent bottom-bar player follows your listeners across the whole platform. Tracks, covers and podcasts stream right inside your feed — no downloads, no external apps.</p>
+          </div>
+          <div class="feature-visual">
+            <div class="mock-playerbar">
+              <img src="./assets/images/music.png" alt="" />
+              <div class="mock-trackinfo">
+                <strong>Navigating Milestones</strong>
+                <span>The Daily Hustle</span>
+              </div>
+              <div class="mock-controls">
+                <span>⏮</span>
+                <span class="mock-playbtn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21"/></svg></span>
+                <span>⏭</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row row-reverse reveal">
+          <div class="feature-text">
+            <span class="feature-tag tag-explore">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>
+              Explore
+            </span>
+            <h3>Get discovered beyond your followers</h3>
+            <p>Trending walls surface fresh galleries, articles and tracks from the whole community. Great work finds an audience — even on day one.</p>
+          </div>
+          <div class="feature-visual">
+            <div class="mock-explore">
+              <div class="mock-search">🔍 trending: lo-fi beats</div>
+              <div class="mock-tags">
+                <span>#3d-art</span><span>#webdev</span><span>#indie-music</span>
+                <span>#essay</span><span>#photography</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Types -->
+      <section class="content-category reveal">
         <div class="category">
           <div class="category-card">
             <img src="./assets/images/Gallery.jpg" alt="" />
             <h3>Gallery</h3>
+            <p>Visual art &amp; photography</p>
           </div>
           <div class="category-card">
             <img src="./assets/images/articles.png" alt="" />
             <h3>Articles</h3>
+            <p>Long-form &amp; deep dives</p>
           </div>
           <div class="category-card">
             <img src="./assets/images/music.png" alt="" />
             <h3>Music</h3>
+            <p>Tracks &amp; podcasts</p>
           </div>
           <div class="category-card">
             <img src="./assets/images/blogger.jpg" alt="" />
             <h3>Blogs</h3>
+            <p>Stories &amp; updates</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="trending">
+      <!-- Trending Marquee (relocated) -->
+      <section class="trending-band reveal">
         <div class="trending-header">
           <h2>Trending on MediaFeed</h2>
         </div>
-        <div class="trending-content">
+        <div class="trending">
           <div class="marquee-track">
-            <!-- FIRST SET OF IMAGES -->
             <div class="marquee-item">
               <img src="./assets/images/pexel/pexels-action-2178885_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-mountain-climbing-1840220_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-mountain-climbing-1840220_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/blackwoman.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/blackwoman.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-beach-2178747_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-beach-2178747_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-beverage-1853374_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/geometric.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-cascade-1853341_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/dailyhus2.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-canyon-1853140_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-chairlift-2179345_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/geometric.jpg"
-                alt=""
-              />
-            </div>
-            <div class="marquee-item">
-              <img
-                src="./assets/images/dailyhus2.jpg"
-                alt=""
-              />
-            </div>
-            <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-chairlift-2179345_1920.jpg"
-                alt=""
-              />
-            </div>
-            <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-bowed-instrument-1853324_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-bowed-instrument-1853324_1920.jpg" alt="" />
             </div>
 
-            <!-- SECOND SET OF IMAGES -->
+            <!-- Exact duplicate of the first 8 items — required for a seamless -50% loop -->
             <div class="marquee-item">
-              <img src="./assets/images/pexel/pexels-champagne-2178775_1920.jpg" alt=""/>
+              <img src="./assets/images/pexel/pexels-action-2178885_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-animal-1853135_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-mountain-climbing-1840220_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/lady2.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/blackwoman.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-architecture-2178736_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-beach-2178747_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-beverage-1853374_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/geometric.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-cascade-1853341_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/dailyhus2.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-canyon-1853140_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-chairlift-2179345_1920.jpg" alt="" />
             </div>
             <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-candies-1853287_1920.jpg"
-                alt=""
-              />
-            </div>
-            <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-cat-1853372_1920.jpg"
-                alt=""
-              />
-            </div>
-            <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-chairlift-2179345_1920.jpg"
-                alt=""
-              />
-            </div>
-            <div class="marquee-item">
-              <img
-                src="./assets/images/pexel/pexels-bowed-instrument-1853324_1920.jpg"
-                alt=""
-              />
+              <img src="./assets/images/pexel/pexels-bowed-instrument-1853324_1920.jpg" alt="" />
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials reveal">
+        <h2 class="section-title">Creators already feel at home</h2>
+
+        <div class="testimonial-grid">
+          <figure class="testimonial-card">
+            <blockquote>
+              "I used to drop a link on four different apps every time I
+              released a track. Now my listeners just follow me once."
+            </blockquote>
+            <figcaption>
+              <img src="./assets/images/lady1.jpg" alt="" />
+              <div>
+                <strong>Glory O.</strong>
+                <span>Music producer</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <blockquote>
+              "My design sketches and my writing used to live on separate
+              platforms. MediaFeed put them on one wall — clients noticed."
+            </blockquote>
+            <figcaption>
+              <img src="./assets/images/man2.jpg" alt="" />
+              <div>
+                <strong>Ife A.</strong>
+                <span>Product designer</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <blockquote>
+              "The filter tabs are genius. Readers read, listeners listen,
+              and everyone sees the real me."
+            </blockquote>
+            <figcaption>
+              <img src="./assets/images/lady3.jpg" alt="" />
+              <div>
+                <strong>Miracle E.</strong>
+                <span>Blogger &amp; ML student</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Pricing Teaser -->
+      <section class="pricing reveal" id="pricing">
+        <h2 class="section-title">Simple pricing, generous free tier</h2>
+        <p class="section-subtitle">Start free forever. Upgrade when your audience does.</p>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Starter</h3>
+            <p class="price"><span>$0</span>/forever</p>
+            <ul>
+              <li>Unified creator feed</li>
+              <li>Link up to 3 social accounts</li>
+              <li>20 uploads per month</li>
+              <li>Community support</li>
+            </ul>
+            <button id="pricingSignupFree" class="btn-outline cta-open-signup">Get started free</button>
+          </article>
+
+          <article class="price-card price-featured">
+            <span class="coming-soon">Coming soon</span>
+            <h3>Creator</h3>
+            <p class="price"><span>$4.99</span>/month</p>
+            <ul>
+              <li>Unlimited uploads</li>
+              <li>Unlimited linked accounts</li>
+              <li>Custom profile themes</li>
+              <li>Basic analytics</li>
+            </ul>
+            <button class="btn-primary btn-disabled" disabled>Join waitlist</button>
+          </article>
+
+          <article class="price-card">
+            <span class="coming-soon">Coming soon</span>
+            <h3>Pro</h3>
+            <p class="price"><span>$9.99</span>/month</p>
+            <ul>
+              <li>Everything in Creator</li>
+              <li>Scheduled posts</li>
+              <li>Advanced analytics</li>
+              <li>Verified creator badge</li>
+            </ul>
+            <button class="btn-outline btn-disabled" disabled>Join waitlist</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq reveal" id="faq">
+        <h2 class="section-title">Questions, answered</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is MediaFeed really free?
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The Starter plan is free forever — unified feed, social linking, and uploads included. Paid plans add extras like analytics and scheduling when they launch.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Which platforms can I link?
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>Instagram, X (Twitter), TikTok, YouTube, Twitch, and any personal blog via URL. We're adding more platforms as their APIs open up.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do my followers need an account to see my feed?
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Public profiles are viewable by anyone. An account is only needed to interact, likes, comments, and follows.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What content types can I post?
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>Four: photo galleries, written articles, blog posts, and audio (music or podcasts). They all share one feed but keep their own category badge and filter tab.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Who owns the content I upload?
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>You do. MediaFeed claims no ownership of your work, you grant us only the license needed to display it on the platform.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I use MediaFeed as my only website?
+              <span class="faq-chevron">▾</span>
+            </button>
+            <div class="faq-answer">
+              <p>Many creators do. Your profile acts as a living portfolio: feed, about, and all social links on one page. A custom domain option is planned for Pro.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Band -->
+      <section class="final-cta reveal">
+        <div class="final-cta-inner">
+          <h2>Your audience is waiting.</h2>
+          <p>Stop scattering your creativity. Bring it home to one feed.</p>
+          <button id="finalCtaSignup" class="btn-primary cta-btn-large cta-open-signup">
+            Create your free account
+          </button>
+        </div>
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-      
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">MediaFeed</a>
+          <p>
+            One platform for every medium you create. Galleries, articles,
+            blogs, and music, plus every social account you own  in a single
+            feed.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="feed.html">Your Feed</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blogs.html">Articles &amp; Blogs</a></li>
+            <li><a href="music.html">Music</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Legal &amp; Compliance</a></li>
+            <li><a href="#">Cookies Settings</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2023 MediaFeed (Intern Project). All rights reserved.</p>
+        <p>&copy; 2026 MediaFeed. All rights reserved.</p>
         <ul>
-          <li><a href="">Terms</a></li>
-          <li><a href="">Privacy</a></li>
-          <li><a href="">Legal & Compliance</a></li>
-          <li><a href="">Your Privacy Choices</a></li>
-          <li><a href="">Cookies Settings</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal &amp; Compliance</a></li>
+          <li><a href="#">Your Privacy Choices</a></li>
+          <li><a href="#">Cookies Settings</a></li>
         </ul>
       </div>
     </footer>
@@ -242,6 +630,20 @@
         <h2>Create your MediaFeed Account</h2>
         <form id="signUpForm">
           <input type="text" id="regName" placeholder="Full Name" required />
+
+          <div class="username-field">
+            <span>@</span>
+            <input
+              type="text"
+              id="regUsername"
+              placeholder="Username (letters, numbers, . or _)"
+              required
+              minlength="3"
+              maxlength="20"
+              autocomplete="username"
+            />
+          </div>
+
           <input
             type="email"
             id="regEmail"
@@ -251,16 +653,48 @@
           <input
             type="password"
             id="regPassword"
-            placeholder="Create Password"
+            placeholder="Create Password (min 8 characters)"
             required
+            minlength="8"
+            autocomplete="new-password"
           />
           <input
             type="password"
             id="regConfirmPassword"
             placeholder="Confirm Password"
             required
+            autocomplete="new-password"
           />
-          <button type="submit" class="btn-submit">Sign Up</button>
+
+          <p class="field-label">What do you create? <em>(optional)</em></p>
+          <div class="interest-chips" id="interestChips">
+            <button type="button" class="chip" data-value="Photography">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              Photography
+            </button>
+            <button type="button" class="chip" data-value="Music">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              Music
+            </button>
+            <button type="button" class="chip" data-value="Writing">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Writing
+            </button>
+            <button type="button" class="chip" data-value="Design">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              Design
+            </button>
+            <button type="button" class="chip" data-value="Code">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Code
+            </button>
+            <button type="button" class="chip" data-value="Video">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              Video
+            </button>
+          </div>
+
+          <button type="submit" class="btn-submit">Create My Account</button>
         </form>
       </div>
     </div>
@@ -288,6 +722,7 @@
       </div>
     </div>
 
+    <script src="./landing.js" defer></script>
     <script src="./script.js"></script>
   </body>
 </html>

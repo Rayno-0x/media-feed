@@ -1,0 +1,127 @@
+/* ============================================================
+   MediaFeed — Design Token System ("Electric Violet")
+   ------------------------------------------------------------
+   Single source of truth shared by every page.
+   Dark is the default theme. Light mode activates by setting
+   data-theme="light" on the <html> element:
+     document.documentElement.dataset.theme = "light";
+   ============================================================ */
+
+/* Shared reset (page stylesheets rely on this) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* --- Surfaces --- */
+  --bg-base: #0d0d21; /* page background — deep indigo-black */
+  --bg-surface: #161632; /* cards, navbar, footer */
+  --bg-elevated: #1f1f45; /* hovers, snippets, inputs on cards */
+  --bg-input: #12122a; /* form fields */
+  --bg-overlay: rgba(9, 9, 27, 0.7); /* modal backdrops */
+
+  /* --- Brand --- */
+  --brand-primary: #8b5cf6; /* electric violet */
+  --brand-primary-strong: #7c3aed;
+  --brand-secondary: #ec4899; /* hot pink */
+  --brand-tint: #c4b5fd; /* light violet for text accents on dark */
+  --brand-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+
+  /* --- Text --- */
+  --text-main: #f5f3ff;
+  --text-muted: #a5a3c7;
+  --text-faint: #6e6c96;
+
+  /* --- Borders & elevation --- */
+  --border-subtle: rgba(139, 92, 246, 0.18);
+  --border-strong: rgba(139, 92, 246, 0.38);
+  --shadow-card: 0 2px 12px rgba(5, 5, 20, 0.35);
+  --shadow-hover: 0 10px 28px rgba(124, 58, 237, 0.28);
+  --shadow-glow: 0 0 24px rgba(236, 72, 153, 0.35);
+  --focus-ring: 0 0 0 3px rgba(139, 92, 246, 0.45);
+
+  /* --- Semantic status colors --- */
+  --color-success: #34d399;
+  --color-danger: #f87171;
+  --color-warning: #fbbf24;
+
+  /* --- Content-type badges --- */
+  --badge-gallery-bg: rgba(236, 72, 153, 0.16);
+  --badge-gallery-fg: #f9a8d4;
+  --badge-article-bg: rgba(56, 189, 248, 0.14);
+  --badge-article-fg: #7dd3fc;
+  --badge-blog-bg: rgba(139, 92, 246, 0.2);
+  --badge-blog-fg: #c4b5fd;
+  --badge-music-bg: rgba(52, 211, 153, 0.14);
+  --badge-music-fg: #6ee7b7;
+
+  /* --- Radii --- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 30px;
+
+  /* --- Spacing scale --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* --- Motion --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* --- Light-mode twin (future toggle target) --- */
+[data-theme="light"] {
+  --bg-base: #faf9ff;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f3f0ff;
+  --bg-input: #ffffff;
+  --bg-overlay: rgba(20, 16, 45, 0.55);
+
+  --text-main: #1a1533;
+  --text-muted: #5d5a7a;
+  --text-faint: #8f8cab;
+
+  --border-subtle: rgba(124, 58, 237, 0.14);
+  --border-strong: rgba(124, 58, 237, 0.32);
+  --shadow-card: 0 2px 12px rgba(26, 21, 51, 0.08);
+  --shadow-hover: 0 10px 28px rgba(124, 58, 237, 0.16);
+  --shadow-glow: 0 0 24px rgba(236, 72, 153, 0.25);
+
+  --badge-gallery-fg: #be185d;
+  --badge-article-fg: #0369a1;
+  --badge-blog-fg: #6d28d9;
+  --badge-music-fg: #047857;
+}
+
+/* --- Base --- */
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+}
+
+/* Keyboard accessibility — visible focus everywhere */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

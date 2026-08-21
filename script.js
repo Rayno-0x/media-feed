@@ -28,13 +28,23 @@ window.addEventListener("click", (e) => {
 
 // 3. Handle the Sign-Up Process
 signUpForm.addEventListener("submit", function (e) {
-  e.preventDefault(); 
+  e.preventDefault();
 
   // Get the values the user typed in
-  const name = document.getElementById("regName").value;
-  const email = document.getElementById("regEmail").value;
+  const name = document.getElementById("regName").value.trim();
+  const username = document.getElementById("regUsername").value.trim();
+  const email = document.getElementById("regEmail").value.trim();
   const password = document.getElementById("regPassword").value;
   const confirmPassword = document.getElementById("regConfirmPassword").value;
+
+  // Username: 3-20 chars, letters/numbers/dots/underscores only
+  const usernamePattern = /^[a-zA-Z0-9._]{3,20}$/;
+  if (!usernamePattern.test(username)) {
+    alert(
+      "Username must be 3-20 characters and use only letters, numbers, dots or underscores."
+    );
+    return;
+  }
 
   // Check if passwords match before proceeding
   if (password !== confirmPassword) {
@@ -42,16 +52,67 @@ signUpForm.addEventListener("submit", function (e) {
     return;
   }
 
-  // Save them to localStorage (simulating a database)
-  const userData = { name: name, email: email, password: password };
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
+    return;
+  }
+
+  // Collect optional creator interests from selected chips
+  const interests = [
+    ...document.querySelectorAll("#interestChips .chip.selected"),
+  ].map((chip) => chip.dataset.value);
+
+  // Save them to localStorage (simulating a database — replaced by the real backend)
+  const userData = {
+    name,
+    username,
+    email,
+    password,
+    interests,
+  };
   localStorage.setItem("mediaFeedUser", JSON.stringify(userData));
 
-  alert("Sign up successful! You can now log in.");
+  alert(`Welcome to MediaFeed, @${username}! You can now log in.`);
 
   signUpForm.reset();
+  document
+    .querySelectorAll("#interestChips .chip.selected")
+    .forEach((chip) => chip.classList.remove("selected"));
 
   signUpModal.classList.remove("show");
   signInModal.classList.add("show");
+});
+
+// Toggle the optional interest chips (they must not submit the form)
+document.getElementById("interestChips").addEventListener("click", (e) => {
+  const chip = e.target.closest(".chip");
+  if (chip) chip.classList.toggle("selected");
+});
+
+// 5. FAQ Accordion (one open at a time)
+document.querySelectorAll(".faq-item").forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    const wasOpen = item.classList.contains("open");
+
+    document
+      .querySelectorAll(".faq-item.open")
+      .forEach((other) => other.classList.remove("open"));
+
+    if (!wasOpen) item.classList.add("open");
+
+    document.querySelectorAll(".faq-question").forEach((q) => {
+      q.setAttribute(
+        "aria-expanded",
+        String(q.closest(".faq-item").classList.contains("open"))
+      );
+    });
+  });
+});
+
+// 6. Secondary sign-up buttons reuse the existing sign-up modal
+const signUpModalEl = document.getElementById("signUpModal");
+document.querySelectorAll(".cta-open-signup").forEach((btn) => {
+  btn.addEventListener("click", () => signUpModalEl.classList.add("show"));
 });
 
 // 4. Handle the Sign-In Process
