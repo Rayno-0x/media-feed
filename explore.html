@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaFeed — Explore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/explore.css" />
+  </head>
+
+  <body class="mf-app" data-page="explore" data-rail="true">
+    <a class="mf-skip" href="#exploreGrid">Skip to results</a>
+
+    <main class="mf-main">
+      <!-- Hero search -->
+      <section class="mf-card mf-explore-hero">
+        <h1 class="mf-explore-title">Explore MediaFeed</h1>
+        <p class="mf-explore-sub">
+          Discover creators, galleries, articles, music and more from the whole
+          community.
+        </p>
+        <div class="mf-search mf-search-lg" id="exploreSearch">
+          <div class="mf-search-box">
+            <span id="searchIcon"></span>
+            <input type="search" id="exploreInput" placeholder="Search posts, people, #tags…" autocomplete="off"/>
+          </div>
+          <div class="mf-search-results"></div>
+        </div>
+
+        <!-- Category tiles -->
+        <div class="mf-cat-tiles" id="catTiles"></div>
+      </section>
+
+      <!-- Active filter chip -->
+      <div class="mf-active-filter" id="activeFilter" hidden>
+        <span id="activeFilterText"></span>
+        <button class="mf-icon-btn" id="clearFilter" aria-label="Clear filter"></button>
+      </div>
+
+      <!-- Creators to follow -->
+      <section class="mf-card mf-creator-card">
+        <h3 class="mf-section-h">Creators to follow</h3>
+        <div class="mf-creator-grid" id="creatorGrid"></div>
+      </section>
+
+      <!-- Trending wall -->
+      <div class="mf-page-head">
+        <div>
+          <h2 class="mf-page-title">Trending now</h2>
+          <p class="mf-page-sub" id="trendSub">The most-loved posts across MediaFeed</p>
+        </div>
+      </div>
+
+      <section id="exploreGrid" class="mf-masonry" aria-live="polite"></section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages/explore.js"></script>
+  </body>
+</html>

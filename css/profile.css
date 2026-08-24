@@ -1,0 +1,205 @@
+/* ============================================================
+   MediaFeed — Profile page styles
+   ============================================================ */
+
+body[data-page="profile"] .mf-main {
+  max-width: 760px;
+}
+
+.mf-profile-card {
+  overflow: hidden;
+}
+
+/* --- Cover --- */
+.mf-profile-cover {
+  height: 180px;
+  position: relative;
+  background: var(--bg-elevated);
+}
+
+.mf-profile-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Identity row --- */
+.mf-profile-head {
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.mf-profile-toprow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.mf-profile-avatar-wrap {
+  position: relative;
+  z-index: 1;
+  margin-top: -44px;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  display: inline-block;
+}
+
+.mf-profile-avatar-wrap img {
+  border: 3px solid var(--bg-surface);
+  background: var(--bg-elevated);
+}
+
+.mf-profile-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* --- Name / bio --- */
+.mf-profile-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-3);
+}
+
+.mf-profile-handle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.mf-profile-bio {
+  margin-top: var(--space-2);
+  line-height: 1.55;
+  color: var(--text-main);
+  max-width: 520px;
+}
+
+.mf-profile-interests {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+.mf-interest-pill {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--brand-tint);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* --- Stats --- */
+.mf-profile-stats {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.mf-stat-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mf-stat-item strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.mf-stat-item span {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-left: 5px;
+}
+
+/* --- Social links row --- */
+.mf-social-row {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.mf-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-input);
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.mf-social-link:hover {
+  color: #fff;
+  background: var(--brand-gradient);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* --- Gallery mosaic tab --- */
+.mf-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-2);
+}
+
+.mf-mosaic a {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+}
+
+.mf-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.mf-mosaic a:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 640px) {
+  .mf-profile-cover {
+    height: 130px;
+  }
+
+  .mf-profile-head {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+
+  .mf-profile-actions {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: var(--space-3);
+  }
+
+  .mf-profile-toprow {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .mf-profile-stats {
+    gap: var(--space-5);
+  }
+
+  .mf-mosaic {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}

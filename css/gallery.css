@@ -1,0 +1,78 @@
+/* ============================================================
+   MediaFeed — Gallery page styles
+   ============================================================ */
+
+body[data-page="gallery"] .mf-main {
+  max-width: 900px;
+}
+
+.gal-grid {
+  columns: 2;
+  column-gap: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .gal-grid {
+    columns: 1;
+  }
+}
+
+@media (min-width: 1400px) {
+  .gal-grid {
+    columns: 3;
+  }
+}
+
+.gal-tile {
+  break-inside: avoid;
+  margin-bottom: var(--space-3);
+  display: block;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  text-decoration: none;
+}
+
+.gal-tile img {
+  width: 100%;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.gal-tile:hover img {
+  transform: scale(1.04);
+}
+
+.gal-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 26px var(--space-3) var(--space-2);
+  background: linear-gradient(to top, rgba(8, 8, 22, 0.85), transparent);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.gal-tile:hover .gal-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gal-overlay strong {
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gal-overlay small {
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}

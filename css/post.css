@@ -1,0 +1,35 @@
+/* ============================================================
+   MediaFeed — Post detail page styles
+   ============================================================ */
+
+body[data-page="post"] .mf-main {
+  max-width: 700px;
+}
+
+.mf-back {
+  align-self: flex-start;
+}
+
+/* Bigger media in detail view */
+body[data-page="post"] .mf-post-media img {
+  max-height: 560px;
+}
+
+#commentsCard {
+  padding: var(--space-5);
+}
+
+.mf-comments-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.mf-comment-form {
+  margin-top: var(--space-4);
+}
+
+#moreFrom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}

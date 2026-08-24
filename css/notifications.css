@@ -1,0 +1,102 @@
+/* ============================================================
+   MediaFeed — Notifications page styles
+   ============================================================ */
+
+.mf-notif {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.mf-notif:hover {
+  background: var(--bg-elevated);
+}
+
+.mf-notif.unread {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: var(--border-subtle);
+}
+
+/* Icon bubble per type */
+.mf-notif-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.ni-like { background: linear-gradient(135deg, #ec4899, #be185d); }
+.ni-follow { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.ni-comment { background: linear-gradient(135deg, #38bdf8, #0369a1); }
+.ni-mention { background: linear-gradient(135deg, #34d399, #047857); }
+
+.mf-notif-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.mf-notif-text {
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.mf-notif-text a {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.mf-notif-text a:hover {
+  text-decoration: underline;
+}
+
+.mf-notif-text .hl {
+  color: var(--brand-tint);
+  font-weight: 500;
+}
+
+.mf-notif-time {
+  display: block;
+  color: var(--text-faint);
+  font-size: 0.76rem;
+  margin-top: 3px;
+}
+
+.mf-notif-thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-subtle);
+}
+
+.mf-notif-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand-secondary);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Group date headers */
+.mf-notif-group {
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-2) 0;
+}

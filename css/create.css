@@ -1,0 +1,186 @@
+/* ============================================================
+   MediaFeed — Create page styles
+   ============================================================ */
+
+body[data-page="create"] .mf-main {
+  max-width: 720px;
+}
+
+/* --- Type picker tiles --- */
+.mf-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+.mf-type-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.mf-type-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-strong);
+}
+
+.mf-type-tile-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.mf-type-tile h4 {
+  font-size: 0.98rem;
+}
+
+.mf-type-tile p {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+/* --- Form --- */
+#formCard {
+  overflow: hidden;
+}
+
+.mf-form-inner {
+  padding: var(--space-5);
+}
+
+.mf-form-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.mf-form-banner .mf-badge-update {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.8rem;
+}
+
+/* Multi-image previews */
+.mf-multi-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.mf-thumb {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  aspect-ratio: 1;
+}
+
+.mf-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mf-thumb button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(10, 10, 25, 0.75);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mf-thumb button:hover {
+  background: var(--color-danger);
+}
+
+/* Track picker */
+.mf-track-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.mf-track-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 9px var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-input);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.mf-track-option:hover {
+  border-color: var(--border-strong);
+}
+
+.mf-track-option.selected {
+  border-color: var(--brand-primary);
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.mf-track-option img {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mf-track-option-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mf-track-option-artist {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* Publish row */
+.mf-publish-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.mf-publish-row .mf-btn {
+  flex: 1;
+  padding: 13px;
+}

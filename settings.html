@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaFeed — Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+  </head>
+
+  <body class="mf-app" data-page="settings">
+    <a class="mf-skip" href="#settingsNav">Skip to settings</a>
+
+    <main class="mf-main mf-settings-main">
+      <div class="mf-page-head">
+        <div>
+          <h1 class="mf-page-title">Settings</h1>
+          <p class="mf-page-sub">Manage your account and experience</p>
+        </div>
+      </div>
+
+      <!-- Anchor nav -->
+      <nav class="mf-tabs mf-settings-nav" id="settingsNav">
+        <a class="mf-tab" href="#account">Account</a>
+        <a class="mf-tab" href="#links">Social links</a>
+        <a class="mf-tab" href="#appearance">Appearance</a>
+        <a class="mf-tab" href="#prefs">Notifications</a>
+        <a class="mf-tab" href="#privacy">Privacy</a>
+      </nav>
+
+      <!-- Account -->
+      <section class="mf-card set-section" id="account">
+        <h3 class="set-h">Account &amp; profile</h3>
+        <div class="set-grid">
+          <div class="set-avatars">
+            <label class="set-avatar-pick">
+              <input type="file" id="avatarFile" accept="image/*" hidden />
+              <img id="avatarPreview" class="mf-avatar" width="84" height="84" alt=""/>
+              <span>${}</span>
+            </label>
+            <label class="set-cover-pick">
+              <input type="file" id="coverFile" accept="image/*" hidden />
+              <img id="coverPreview" alt=""/>
+              <span>${}</span>
+            </label>
+          </div>
+
+          <div class="set-fields">
+            <div class="mf-field"><label>Display name</label><input class="mf-input" id="setName"/></div>
+            <div class="mf-field"><label>Username</label><input class="mf-input" id="setUsername"/><p class="mf-error" id="unameError"></p></div>
+            <div class="mf-field"><label>Email</label><input class="mf-input" id="setEmail"/></div>
+            <div class="mf-field"><label>Bio</label><textarea class="mf-textarea" id="setBio" style="min-height:90px"></textarea></div>
+            <button class="mf-btn mf-btn-primary" id="saveAccount">Save changes</button>
+            <span class="mf-toast-inline" id="accountSaved"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social links -->
+      <section class="mf-card set-section" id="links">
+        <h3 class="set-h">Your social accounts</h3>
+        <p class="set-sub">Links appear on your profile. Paste full URLs.</p>
+        <div id="socialFields"></div>
+        <button class="mf-btn mf-btn-primary" id="saveSocials">Save links</button>
+      </section>
+
+      <!-- Appearance -->
+      <section class="mf-card set-section" id="appearance">
+        <h3 class="set-h">Appearance</h3>
+        <div class="set-theme-row" id="themeRow">
+          <button class="set-theme-opt" data-theme="dark"></button>
+          <button class="set-theme-opt" data-theme="light"></button>
+        </div>
+      </section>
+
+      <!-- Notification prefs -->
+      <section class="mf-card set-section" id="prefs">
+        <h3 class="set-h">Notification preferences</h3>
+        <div id="prefToggles"></div>
+      </section>
+
+      <!-- Privacy -->
+      <section class="mf-card set-section" id="privacy">
+        <h3 class="set-h">Privacy</h3>
+        <div id="privacyToggles"></div>
+        <p class="mf-hint">Private accounts arrive with the backend — preference saved for now.</p>
+      </section>
+
+      <!-- Danger zone -->
+      <section class="mf-card set-section set-danger" id="danger">
+        <h3 class="set-h">Danger zone</h3>
+        <div class="set-danger-row">
+          <div>
+            <strong>Log out</strong>
+            <p>You'll return to the landing page.</p>
+          </div>
+          <button class="mf-btn mf-btn-danger" id="logoutBtn">${}</button>
+        </div>
+        <div class="set-danger-row">
+          <div>
+            <strong>Reset demo data</strong>
+            <p>Restores the original mock users and posts.</p>
+          </div>
+          <button class="mf-btn mf-btn-danger" id="resetBtn">Reset data</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages/settings.js"></script>
+  </body>
+</html>

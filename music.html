@@ -3,339 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaFeed — Music</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="theme.css" />
-    <link rel="stylesheet" href="music.css" />
-    <title>MediaFeed - Music</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/music.css" />
   </head>
-  <body>
-    <!-- Top Navigation -->
-    <header class="music-nav">
 
-      <a href="index.html" class="logo">Media<span>Feed</span></a>
-        <ul class="nav-list">
-          <li><a href="feed.html">Your Feed</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blogs.html">Articles & Blogs</a></li>
-          <li><a href="music.html">Music</a></li>
-        </ul>
+  <body class="mf-app" data-page="music" data-rail="true">
+    <a class="mf-skip" href="#trackRows">Skip to tracks</a>
 
-      <div class="nav-actions">
-        <div class="search-container">
-          <span class="search-icon">🔍</span>
-          <input type="text" placeholder="Search" class="search-input" />
+    <main class="mf-main">
+      <div class="mf-page-head">
+        <div>
+          <h1 class="mf-page-title">Music</h1>
+          <p class="mf-page-sub">Your artist home on MediaFeed</p>
         </div>
-        <button class="btn-upload">UPLOAD</button>
-        <img
-          src="./assets/images/icons/avatar_icon.png"
-          alt="Profile"
-          class="profile-pic"
-        />
+        <a class="mf-btn mf-btn-primary mf-btn-sm" href="create.html?type=music">Upload track</a>
       </div>
-    </header>
 
-    <!-- Main Content Area -->
-    <main class="music-content">
-      <!-- Featured Section -->
-      <section class="music-section">
-        <h3>Featured Playlists</h3>
-        <div class="featured-grid">
-          <!-- Card 1 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/1.mp3"
-            data-title="Easy on Me"
-            data-artist="Adele"
-            data-cover="./assets/music_images/Easy on me - Adele.jpg"
-          >
-            <img
-              src="assets/music_images/Easy on me - Adele.jpg"
-              alt="Playlist Cover"
-            />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>Easy on Me</h4>
-              <p>Adele</p>
-            </div>
-          </div>
+      <!-- Creator stats -->
+      <section id="myStats" class="stat-grid" aria-label="Your music stats"></section>
 
-          <!-- Card 2 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/8.mp3"
-            data-title="God Knows"
-            data-artist="Callum"
-            data-cover="assets/audio/Calum_Scott - God_Knows.jpg"
-          >
-            <img src="assets/audio/Calum_Scott - God_Knows.jpg" alt="Playlist Cover" />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>God Knows</h4>
-              <p>Callum Scott</p>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/13.mp3"
-            data-title="i Want To Be a Billionaire"
-            data-artist="Travie McCoy feat. Bruno Mars"
-            data-cover="./assets/music_images/Travie McCoy feat. Bruno Mars - I_Want_To_Be_a_Billionaire.jpg"
-          >
-            <img
-              src="assets/music_images/Travie McCoy feat. Bruno Mars - I_Want_To_Be_a_Billionaire.jpg"
-              alt="Playlist Cover"
-            />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>i Want To Be a Billionaire</h4>
-              <p>Travie McCoy feat. Bruno Mars</p>
-            </div>
-          </div>
+      <!-- Featured artist spotlight -->
+      <section id="spotlight"></section>
 
-          <!-- Card 4 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/4.mp3"
-            data-title="It will Rain"
-            data-artist="Bruno Mars"
-            data-cover="./assets/music_images/Bruno_Mars_-_Locked_Out_Of_Heaven.jpg"
-          >
-            <img
-              src="assets/music_images/Bruno_Mars_-_Locked_Out_Of_Heaven.jpg"
-              alt="Playlist Cover"
-            />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>It will Rain</h4>
-              <p>Bruno Mars</p>
-            </div>
-          </div>
-          <!-- Card 5 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/6.mp3"
-            data-title="Talking To The Moon"
-            data-artist="Bruno Mars_cover_by_KIM_WOOJIN"
-            data-cover="./assets/music_images/Bruno_Mars_cover_by_KIM_WOOJIN_-_Talking_To_The_Moon.jpg"
-          >
-            <img
-              src="assets/music_images/Bruno_Mars_cover_by_KIM_WOOJIN_-_Talking_To_The_Moon.jpg"
-              alt="Playlist Cover"
-            />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>Talking To The Moon</h4>
-              <p>Bruno Mars_cover_by_KIM_WOOJIN</p>
-            </div>
-          </div>
-          <!-- Card 6 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/9.mp3"
-            data-title="Rise"
-            data-artist="Calum Scott"
-            data-cover="./assets/music_images/Calum_Scott - Rise.jpg"
-          >
-            <img
-              src="assets/music_images/Calum_Scott - Rise.jpg"
-              alt="Playlist Cover"
-            />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>Rise</h4>
-              <p>Calum Scott</p>
-            </div>
-          </div>
-          <!-- Card 7 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/7.mp3"
-            data-title="Groove Session"
-            data-artist="Cover Music"
-            data-cover="./assets/music_images/Calum_Scott - You_Are_The_Reason.jpg"
-          >
-            <img src="assets/music_images/Calum_Scott - You_Are_The_Reason.jpg" alt="Playlist Cover" />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>Grenade</h4>
-              <p>Bruno Mars</p>
-            </div>
-          </div>
-          <!-- Card 8 -->
-          <div
-            class="music-card featured-card"
-            data-audio="assets/audio/2.mp3"
-            data-title="Grenade"
-            data-artist="Bruno"
-            data-cover="./assets/music_images/Bruno_Mars - Grenade.jpg"
-          >
-            <img
-              src="assets/music_images/Bruno_Mars - Grenade.jpg"
-              alt="Playlist Cover"
-            />
-            <div class="play-overlay">▶</div>
-            <div class="card-info">
-              <h4>Grenade</h4>
-              <p>Bruno Mars</p>
-            </div>
-          </div>
+      <h2 class="music-section-title">Trending tracks</h2>
+      <section id="trackRows" aria-live="polite"></section>
 
-          <!-- Add more featured cards here as needed -->
-        </div>
-      </section>
-
-      <!-- Split Lower Section -->
-      <div class="split-sections">
-        <!-- New Releases -->
-        <section class="music-section half-width">
-          <h3>NEW RELEASES</h3>
-          <div class="small-grid">
-            <div
-              class="music-card small-card"
-              data-audio="./audio/song3.mp3"
-              data-title="City Lights"
-              data-artist="Lo-Fi Beats"
-              data-cover="./assets/music_images/Justin_Beiber_-_Somebody_To_Love.jpg"
-            >
-              <img
-                src="assets/music_images/Justin_Beiber_-_Somebody_To_Love.jpg"
-                alt="Release Cover"
-              />
-              <h5>Justin</h5>
-            </div>
-            <div
-              class="music-card small-card"
-              data-audio="./audio/song4.mp3"
-              data-title="Talking to the Moon"
-              data-artist="Kim Woojin"
-              data-cover="./assets/music_images/Bruno_Mars_cover_by_KIM_WOOJIN_-_Talking_To_The_Moon.jpg"
-            >
-              <img
-                src="./assets/music_images/Bruno_Mars_cover_by_KIM_WOOJIN_-_Talking_To_The_Moon.jpg"
-                alt="Release Cover"
-              />
-              <h5>KIM WOOJIN</h5>
-            </div>
-          </div>
-        </section>
-
-        <!-- Your Playlists -->
-        <section class="music-section half-width">
-          <h3>YOUR PLAYLISTS</h3>
-          <div class="small-grid">
-            <div
-              class="music-card small-card"
-              data-audio="assets/audio/11.mp3"
-              data-title="Somebody to Love"
-              data-artist="Justin"
-              data-cover="./assets/music_images/Justin_Beiber_-_Somebody_To_Love.jpg"
-            >
-              <img src="./assets/music_images/Justin_Beiber_-_Somebody_To_Love.jpg" alt="Playlist Cover" />
-              <h5>Somebody to love</h5>
-            </div>
-
-            <div
-              class="music-card small-card"
-              data-audio="assets/audio/13.mp3"
-              data-title="I want to be a Billionaire"
-              data-artist="Bruno Mars"
-              data-cover="./assets/music_images/Travie McCoy feat. Bruno Mars - I_Want_To_Be_a_Billionaire.jpg"
-            >
-              <img src="./assets/music_images/Travie McCoy feat. Bruno Mars - I_Want_To_Be_a_Billionaire.jpg" alt="Playlist Cover" />
-              <h5>Morning Setup</h5>
-            </div>
-            <div
-              class="music-card small-card"
-              data-audio="assets/audio/12.mp3"
-              data-title="Sorry"
-              data-artist="Justin Beiber"
-              data-cover="./assets/music_images/Justin beiber - sorry.jpg"
-            >
-              <img src="./assets/music_images/Justin beiber - sorry.jpg" alt="Playlist Cover" />
-              <h5>Exercise</h5>
-            </div>
-            <div
-              class="music-card small-card"
-              data-audio="./audio/song6.mp3"
-              data-title="Easy on Me"
-              data-artist="Adele"
-              data-cover="./assets/music_images/Easy on me - Adele.jpg"
-            >
-              <img src="./assets/music_images/Easy on me - Adele.jpg" alt="Playlist Cover" />
-              <h5>Deep Work</h5>
-            </div>
-            <div
-              class="music-card small-card"
-              data-audio="assets/audio/9.mp3"
-              data-title="Rise"
-              data-artist="Callum Scott"
-              data-cover="./assets/music_images/Calum_Scott - Rise.jpg"
-            >
-              <img src="./assets/music_images/Calum_Scott - Rise.jpg" alt="Playlist Cover" />
-              <h5>Rise</h5>
-            </div>
-            <div
-              class="music-card small-card"
-              data-audio="assets/audio/6.mp3"
-              data-title="Talking to the Moon"
-              data-artist="Bruno Mars"
-              data-cover="./assets/music_images/Bruno_Mars_cover_by_KIM_WOOJIN_-_Talking_To_The_Moon.jpg"
-            >
-              <img src="./assets/music_images/Bruno_Mars_cover_by_KIM_WOOJIN_-_Talking_To_The_Moon.jpg" alt="Playlist Cover" />
-              <h5>Morning Setup</h5>
-            </div>
-            <div
-              class="music-card small-card"
-              data-audio="assets/audio/5.mp3"
-              data-title="Morning Setup"
-              data-artist="Start the day"
-              data-cover="assets/music_images/Bruno_Mars_-_Locked_Out_Of_Heaven.jpg"
-            >
-              <img src="assets/music_images/Bruno_Mars_-_Locked_Out_Of_Heaven.jpg" alt="Playlist Cover" />
-              <h5>Morning Setup</h5>
-            </div>
-          </div>
-        </section>
-      </div>
+      <!-- Artist tools -->
+      <section id="artistTools"></section>
     </main>
 
-    <!-- The Hidden Audio Element -->
-    <audio id="main-audio"></audio>
-
-    <!-- Sticky Bottom Player -->
-    <footer class="player-bar">
-      <div class="progress-bar-container">
-        <input type="range" id="progress-bar" value="0" min="0" max="100" />
-      </div>
-
-      <div class="player-controls">
-        <!-- Left: Track Info -->
-        <div class="now-playing">
-          <img
-            id="track-cover"
-            src="./assets/music_images/Easy on me - Adele.jpg"
-            alt="Current Track"
-          />
-          <div class="track-details">
-            <h4 id="track-title">Select a song</h4>
-            <p id="track-artist">...</p>
-          </div>
-        </div>
-
-        <!-- Center: Playback -->
-        <div class="main-buttons">
-          <button class="ctrl-btn">⏮</button>
-          <button class="ctrl-btn play-btn" id="play-pause-btn">▶</button>
-          <button class="ctrl-btn">⏭</button>
-        </div>
-
-      </div>
-    </footer>
-
-    <script src="music.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages/music.js"></script>
   </body>
 </html>

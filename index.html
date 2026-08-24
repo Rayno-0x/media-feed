@@ -27,8 +27,7 @@
       </ul>
 
       <div class="nav-actions">
-        <button id="signInBtn" class="btn-ghost">Sign In</button>
-        <button id="signUpBtn" class="btn-primary">Sign Up Free</button>
+        <button id="getStartedBtn" class="btn-primary">Get Started</button>
       </div>
     </nav>
 
@@ -181,7 +180,7 @@
           <article class="step-card">
             <span class="step-num">02</span>
             <h3>Link socials &amp; upload</h3>
-            <p>Connect your Instagram, X, TikTok or YouTube — then post galleries, articles, blogs and music.</p>
+            <p>Connect your Instagram, X, TikTok or YouTube, then post galleries, articles, blogs and music.</p>
           </article>
           <article class="step-card">
             <span class="step-num">03</span>
@@ -202,7 +201,7 @@
               Unified Feed
             </span>
             <h3>All your content. One scroll.</h3>
-            <p>Galleries, long-form articles, blogs, and playable music live side by side in a single masonry wall. Filter by type with one tap — your audience never leaves the page.</p>
+            <p>Galleries, long-form articles, blogs, and playable music live side by side in a single masonry wall. Filter by type with one tap. Your audience never leaves the page.</p>
           </div>
           <div class="feature-visual">
             <div class="mock-feed">
@@ -233,7 +232,7 @@
               Social Hub
             </span>
             <h3>Every account you have, linked to one profile</h3>
-            <p>Connect Instagram, X, TikTok, YouTube, Twitch and more. Your followers get a single doorway to everything you are online — no more "link in bio" gymnastics.</p>
+            <p>Connect Instagram, X, TikTok, YouTube, Twitch and more. Your followers get a single doorway to everything you are online. No more "link in bio" gymnastics.</p>
           </div>
           <div class="feature-visual">
             <div class="mock-profile">
@@ -268,7 +267,7 @@
               Built-in Player
             </span>
             <h3>Music that plays where it's posted</h3>
-            <p>A persistent bottom-bar player follows your listeners across the whole platform. Tracks, covers and podcasts stream right inside your feed — no downloads, no external apps.</p>
+            <p>A persistent bottom-bar player follows your listeners across the whole platform. Tracks, covers and podcasts stream right inside your feed. No downloads, no external apps.</p>
           </div>
           <div class="feature-visual">
             <div class="mock-playerbar">
@@ -293,7 +292,7 @@
               Explore
             </span>
             <h3>Get discovered beyond your followers</h3>
-            <p>Trending walls surface fresh galleries, articles and tracks from the whole community. Great work finds an audience — even on day one.</p>
+            <p>Trending walls surface fresh galleries, articles and tracks from the whole community. Great work finds an audience, even on day one.</p>
           </div>
           <div class="feature-visual">
             <div class="mock-explore">
@@ -416,7 +415,7 @@
           <figure class="testimonial-card">
             <blockquote>
               "My design sketches and my writing used to live on separate
-              platforms. MediaFeed put them on one wall — clients noticed."
+              platforms. MediaFeed put them on one wall, clients noticed."
             </blockquote>
             <figcaption>
               <img src="./assets/images/man2.jpg" alt="" />
@@ -622,105 +621,6 @@
         </ul>
       </div>
     </footer>
-
-    <!-- Sign-Up Modal -->
-    <div id="signUpModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" id="closeSignUp">&times;</span>
-        <h2>Create your MediaFeed Account</h2>
-        <form id="signUpForm">
-          <input type="text" id="regName" placeholder="Full Name" required />
-
-          <div class="username-field">
-            <span>@</span>
-            <input
-              type="text"
-              id="regUsername"
-              placeholder="Username (letters, numbers, . or _)"
-              required
-              minlength="3"
-              maxlength="20"
-              autocomplete="username"
-            />
-          </div>
-
-          <input
-            type="email"
-            id="regEmail"
-            placeholder="Email Address"
-            required
-          />
-          <input
-            type="password"
-            id="regPassword"
-            placeholder="Create Password (min 8 characters)"
-            required
-            minlength="8"
-            autocomplete="new-password"
-          />
-          <input
-            type="password"
-            id="regConfirmPassword"
-            placeholder="Confirm Password"
-            required
-            autocomplete="new-password"
-          />
-
-          <p class="field-label">What do you create? <em>(optional)</em></p>
-          <div class="interest-chips" id="interestChips">
-            <button type="button" class="chip" data-value="Photography">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              Photography
-            </button>
-            <button type="button" class="chip" data-value="Music">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-              Music
-            </button>
-            <button type="button" class="chip" data-value="Writing">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-              Writing
-            </button>
-            <button type="button" class="chip" data-value="Design">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-              Design
-            </button>
-            <button type="button" class="chip" data-value="Code">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              Code
-            </button>
-            <button type="button" class="chip" data-value="Video">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-              Video
-            </button>
-          </div>
-
-          <button type="submit" class="btn-submit">Create My Account</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Sign-In Modal -->
-    <div id="signInModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" id="closeSignIn">&times;</span>
-        <h2>Welcome Back</h2>
-        <form id="signInForm">
-          <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email Address"
-            required
-          />
-          <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password"
-            required
-          />
-          <button type="submit" class="btn-submit">Log In</button>
-        </form>
-      </div>
-    </div>
 
     <script src="./landing.js" defer></script>
     <script src="./script.js"></script>

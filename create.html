@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MediaFeed — Gallery</title>
+    <title>MediaFeed — Create</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,29 +14,35 @@
 
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/create.css" />
   </head>
 
-  <body class="mf-app" data-page="gallery" data-rail="true">
-    <a class="mf-skip" href="#galleryGrid">Skip to gallery</a>
+  <body class="mf-app" data-page="create">
+    <a class="mf-skip" href="#createForm">Skip to form</a>
 
     <main class="mf-main">
       <div class="mf-page-head">
         <div>
-          <h1 class="mf-page-title">Gallery</h1>
-          <p class="mf-page-sub">Visual art &amp; photography from the community</p>
+          <h1 class="mf-page-title">Create</h1>
+          <p class="mf-page-sub">Share your work with the community</p>
         </div>
-        <a class="mf-btn mf-btn-primary mf-btn-sm" href="create.html?type=gallery">
-          New gallery
-        </a>
+        <button class="mf-icon-btn" id="backBtn" aria-label="Go back"></button>
       </div>
 
-      <section id="galleryGrid" class="gal-grid" aria-live="polite"></section>
+      <!-- Step 1: choose type -->
+      <section id="typePicker">
+        <div class="mf-type-grid" id="typeGrid"></div>
+      </section>
+
+      <!-- Step 2: tailored form -->
+      <section class="mf-card" id="formCard" hidden>
+        <div class="mf-form-inner" id="formArea"></div>
+      </section>
     </main>
 
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/components.js"></script>
-    <script src="js/pages/gallery.js"></script>
+    <script src="js/pages/create.js"></script>
   </body>
 </html>

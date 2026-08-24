@@ -1,0 +1,15 @@
+# OS cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Test harness artifacts (written to repo root by the jsdom suite)
+__test_*.html
+
+# Deps / builds (none today, but future-proof)
+node_modules/
+dist/

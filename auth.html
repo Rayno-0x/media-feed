@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaFeed — Sign in</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+
+  <!-- mf-public = no auth guard, no app shell -->
+  <body class="mf-app mf-public" data-page="auth">
+    <main class="auth-split">
+      <!-- Brand panel -->
+      <aside class="auth-brand">
+        <a class="mf-logo" href="index.html">Media<span>Feed</span></a>
+
+        <div class="auth-brand-body">
+          <h1>Your creativity isn't one-dimensional.</h1>
+          <p>
+            One feed for your galleries, articles, blogs, music and videos,
+            plus every social account you own.
+          </p>
+
+          <ul class="auth-points">
+            <li><span data-icon="image"></span> Post every medium in one place</li>
+            <li><span data-icon="users"></span> Grow one audience instead of five</li>
+            <li><span data-icon="link"></span> Link all your socials to one profile</li>
+          </ul>
+
+          <div class="auth-stat">
+            <strong>2,340+</strong>
+            <span>creators already share their work here</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Form panel -->
+      <section class="auth-panel">
+        <button class="auth-close" id="closeAuth" aria-label="Back to landing"></button>
+
+        <div class="auth-tabs">
+          <button class="active" data-tab="signin">Sign in</button>
+          <button data-tab="signup">Create account</button>
+        </div>
+
+        <!-- SIGN IN -->
+        <form id="signinForm" class="auth-form">
+          <div class="mf-field">
+            <label>Email</label>
+            <input type="email" id="loginEmail" class="mf-input" placeholder="you@example.com" required/>
+          </div>
+          <div class="mf-field">
+            <div class="label-row">
+              <label>Password</label>
+              <a href="#" id="forgotLink" class="mini-link">Forgot password?</a>
+            </div>
+            <input type="password" id="loginPassword" class="mf-input" placeholder="••••••••" required/>
+          </div>
+          <p class="mf-error" id="loginError"></p>
+          <button type="submit" class="mf-btn mf-btn-primary auth-submit">Log in</button>
+
+          <div class="demo-box">
+            <p><strong>Demo account</strong></p>
+            <p>rae@mediafeed.app · mediafeed</p>
+            <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm" id="fillDemo">Fill demo credentials</button>
+          </div>
+        </form>
+
+        <!-- SIGN UP -->
+        <form id="signupForm" class="auth-form" hidden>
+          <div class="mf-field"><label>Full name</label><input type="text" id="regName" class="mf-input" placeholder="Rae Cole" required/></div>
+          <div class="mf-field">
+            <label>Username</label>
+            <div class="uname-wrap"><span>@</span><input type="text" id="regUsername" class="mf-input" placeholder="your_handle" minlength="3" maxlength="20" required/></div>
+          </div>
+          <div class="mf-field"><label>Email</label><input type="email" id="regEmail" class="mf-input" placeholder="you@example.com" required/></div>
+          <div class="mf-field"><label>Password</label><input type="password" id="regPassword" class="mf-input" placeholder="Min 8 characters" minlength="8" required/></div>
+          <div class="mf-field"><label>Confirm password</label><input type="password" id="regConfirm" class="mf-input" placeholder="Repeat it" required/></div>
+
+          <p class="field-label">What do you create? <em>(optional)</em></p>
+          <div class="interest-chips" id="interestChips"></div>
+
+          <p class="mf-error" id="signupError"></p>
+          <button type="submit" class="mf-btn mf-btn-primary auth-submit">Create my account</button>
+          <p class="auth-terms">
+            By creating an account you agree to MediaFeed's
+            <a href="index.html">Terms</a> &amp; <a href="index.html">Privacy Policy</a>.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages/auth.js"></script>
+  </body>
+</html>

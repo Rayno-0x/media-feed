@@ -1,0 +1,156 @@
+/* ============================================================
+   MediaFeed — Explore page styles
+   ============================================================ */
+
+/* Explore uses a wider main column */
+body[data-page="explore"] .mf-main {
+  max-width: 980px;
+}
+
+/* --- Hero --- */
+.mf-explore-hero {
+  padding: var(--space-6) var(--space-5);
+  background:
+    radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.16), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(236, 72, 153, 0.12), transparent 55%),
+    var(--bg-surface);
+}
+
+.mf-explore-title {
+  font-size: 1.7rem;
+  letter-spacing: -0.5px;
+}
+
+.mf-explore-sub {
+  color: var(--text-muted);
+  margin: var(--space-2) 0 var(--space-4);
+  font-size: 0.95rem;
+}
+
+.mf-search-lg .mf-search-box {
+  padding: 14px 20px;
+}
+
+.mf-search-lg .mf-search-box input {
+  font-size: 1.02rem;
+}
+
+/* --- Category tiles --- */
+.mf-cat-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: var(--space-3);
+}
+
+.mf-cat-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-input);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  font-family: inherit;
+}
+
+.mf-cat-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+}
+
+.mf-cat-tile.active {
+  border-color: transparent;
+  outline: 2px solid var(--brand-primary);
+  outline-offset: -2px;
+}
+
+.mf-cat-tile-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.mf-cat-tile-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.mf-cat-tile-count {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.tile-gallery   { background: linear-gradient(135deg, #ec4899, #be185d); }
+.tile-article   { background: linear-gradient(135deg, #38bdf8, #0369a1); }
+.tile-blog      { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.tile-music     { background: linear-gradient(135deg, #34d399, #047857); }
+.tile-video     { background: linear-gradient(135deg, #fbbf24, #b45309); }
+.tile-update    { background: linear-gradient(135deg, #60a5fa, #2563eb); }
+
+/* --- Active filter bar --- */
+.mf-active-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 10px 10px 10px var(--space-4);
+  border-radius: var(--radius-pill);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid var(--border-strong);
+  font-size: 0.92rem;
+  color: var(--brand-tint);
+}
+
+.mf-active-filter[hidden] {
+  display: none;
+}
+
+/* --- Creators card --- */
+.mf-section-h {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-3);
+}
+
+.mf-creator-card {
+  padding: var(--space-4) var(--space-5);
+}
+
+.mf-creator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-2) var(--space-5);
+}
+
+/* --- Masonry trending wall --- */
+.mf-masonry {
+  columns: 2;
+  column-gap: var(--space-4);
+}
+
+.mf-masonry > * {
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 700px), (max-width: 900px) and (min-width: 641px) {
+  .mf-masonry {
+    columns: 1;
+  }
+}
+
+@media (min-width: 1400px) {
+  .mf-masonry {
+    columns: 3;
+  }
+}
