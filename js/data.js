@@ -605,7 +605,7 @@ window.MF = window.MF || {};
     const u = Object.assign(
       {
         id: "u_" + Date.now(),
-        avatar: "./assets/images/icons/avatar_icon.png",
+        avatar: "./assets/images/icons/default_avatar.svg",
         cover: "./assets/images/pexel/pexels-art-2178545_1920.jpg",
         bio: "",
         interests: [],
@@ -623,6 +623,27 @@ window.MF = window.MF || {};
   }
 
   function signOut() {
+    state.sessionUserId = null;
+    save();
+  }
+
+  function deleteAccount() {
+    const uid = state.sessionUserId;
+    if (!uid) return;
+    state.users = state.users.filter((u) => u.id !== uid);
+    state.users.forEach((u) => {
+      u.followers = (u.followers || []).filter((id) => id !== uid);
+      u.following = (u.following || []).filter((id) => id !== uid);
+    });
+    state.posts = (state.posts || []).filter((p) => p.userId !== uid);
+    state.posts.forEach((p) => {
+      p.likes = (p.likes || []).filter((id) => id !== uid);
+      p.saves = (p.saves || []).filter((id) => id !== uid);
+      (p.comments || []).forEach((c) => {
+        if (c.userId === uid) c.userId = null;
+      });
+    });
+    state.notifications = (state.notifications || []).filter((n) => n.userId !== uid);
     state.sessionUserId = null;
     save();
   }
@@ -650,6 +671,7 @@ window.MF = window.MF || {};
     signIn,
     signUp,
     signOut,
+    deleteAccount,
   };
 
   load();

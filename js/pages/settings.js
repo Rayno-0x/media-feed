@@ -195,4 +195,29 @@
       window.location.reload();
     }
   });
+
+  /* ==========================================================
+     Delete account
+     ========================================================== */
+  $("#deleteAccBtn").addEventListener("click", () => {
+    const errEl = $("#deleteAccError");
+    errEl.classList.remove("show");
+
+    const pw = $("#deleteAccPw").value;
+    if (!pw) {
+      errEl.textContent = "Enter your password to confirm.";
+      errEl.classList.add("show");
+      return;
+    }
+    if (pw !== me.password) {
+      errEl.textContent = "Incorrect password.";
+      errEl.classList.add("show");
+      return;
+    }
+    if (!confirm("Are you sure? This will permanently delete your account and all your posts. This cannot be undone.")) return;
+
+    store.deleteAccount();
+    MF.ui.toast("Account deleted.");
+    window.location.href = "index.html";
+  });
 })();
